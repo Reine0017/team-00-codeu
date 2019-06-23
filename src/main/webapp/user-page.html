@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+<!--
 
 <!DOCTYPE html>
 <html>
@@ -47,3 +48,44 @@ limitations under the License.
 
   </body>
 </html>
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Page</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/user-page.css">
+  <script src="/js/user-page-loader.js"></script>
+</head>
+<body onload="buildUI();">
+<div id="content">
+  <nav  id="navigation">
+    <a href="/">Home</a>
+    <a href="/feed.html">Public Feed Page</a>
+    <a href="/maps.html">Map</a>
+    <a href="/community.html">Community Page</a>
+    <a href="/aboutus.html">About Our Team</a>
+  </nav>
+
+  <div class="padded rounded panel centered">
+    <h1 id="page-title">User Page</h1>
+  </div>
+
+  <div class="padded rounded panel">
+    <form id="message-form" action="/messages" method="POST" class="hidden">
+      <h2>Enter a new message:</h2>
+      <br/>
+      <textarea name="text" id="message-input" class="rounded"></textarea>
+      <br/>
+      <input type="submit" value="Submit" class="rounded">
+    </form>
+  </div>
+  <hr/>
+
+  <div id="message-container">Loading...</div>
+</div>
+</body>
+</html>
+
