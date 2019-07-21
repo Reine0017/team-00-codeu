@@ -2,12 +2,11 @@ let language;
 let cinemaKey;
 
 // Fetch messages and add them to the page.
-function fetchMessages(){
+function fetchMessages() {
   const url = '/feed?language=' + language + '&cinemaKey=' + cinemaKey;
-  fetch(url).then((response) => response.json()
-  ).then((messages) => {
+  fetch(url).then((response) => response.json()).then((messages) => {
     const messageContainer = document.getElementById('message-container');
-    if (messages.length == 0){
+    if (messages.length == 0) {
       messageContainer.innerHTML = '<p>There are no posts yet.</p>';
     } else {
       messageContainer.innerHTML = '';
@@ -18,7 +17,7 @@ function fetchMessages(){
   });
 }
 
-function buildMessageDiv(message){
+function buildMessageDiv(message) {
   const usernameDiv = document.createElement('div');
   usernameDiv.classList.add("left-align");
   usernameDiv.appendChild(document.createTextNode(message.user));
@@ -73,21 +72,22 @@ function initializeUrlParams(url) {
 }
 
 function createCinemaOptions() {
-  cinemaSelect = document.getElementById("cinema")
+  cinemaSelect = document.getElementById("cinema");
   fetch('/cinema-data')
-    .then(response => response.json())
-    .then(jsonData => {
-      jsonData.forEach((cinema) => {
-        option = document.createElement("option");
-        option.value = cinema.key;
-        option.innerHTML = cinema.content;
-        cinemaSelect.appendChild(option);
-      });
+  .then(response => response.json())
+  .then(jsonData => {
+    jsonData.forEach((cinema) => {
+      option = document.createElement("option");
+      option.value = cinema.key;
+      option.innerHTML = cinema.content;
+      cinemaSelect.appendChild(option);
     });
+    cinemaSelect.value = cinemaKey;
+  });
 }
 
-function loadOnce(){
-  if(!window.location.hash) {
+function loadOnce() {
+  if (!window.location.hash) {
     window.location = window.location + '#loaded';
     window.location.reload();
   }

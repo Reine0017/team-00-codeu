@@ -1,18 +1,18 @@
 /*
- * Copyright 2019 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+* Copyright 2019 Google Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 
 // Get ?user=XYZ parameter value
 const urlParams = new URLSearchParams(window.location.search);
@@ -33,28 +33,28 @@ function setPageTitle() {
 function fetchMessages() {
   const url = '/messages?user=' + parameterUsername;
   fetch(url)
-      .then((response) => {
-        return response.json();
-      })
-      .then((messages) => {
-        const messagesContainer = document.getElementById('message-container');
-        if (messages.length == 0) {
-          messagesContainer.innerHTML = '<p>This user has no posts yet.</p>';
-        } else {
-          messagesContainer.innerHTML = '';
-        }
-        messages.forEach((message) => {
-          const messageDiv = buildMessageDiv(message);
-          messagesContainer.appendChild(messageDiv);
-        });
-      });
+  .then((response) => {
+    return response.json();
+  })
+  .then((messages) => {
+    const messagesContainer = document.getElementById('message-container');
+    if (messages.length == 0) {
+      messagesContainer.innerHTML = '<p>This user has no posts yet.</p>';
+    } else {
+      messagesContainer.innerHTML = '';
+    }
+    messages.forEach((message) => {
+      const messageDiv = buildMessageDiv(message);
+      messagesContainer.appendChild(messageDiv);
+    });
+  });
 }
 
 /**
- * Builds an element that displays the message.
- * @param {Message} message
- * @return {Element}
- */
+* Builds an element that displays the message.
+* @param {Message} message
+* @return {Element}
+*/
 function buildMessageDiv(message) {
   const headerDiv = document.createElement('div');
   headerDiv.classList.add('message-header');

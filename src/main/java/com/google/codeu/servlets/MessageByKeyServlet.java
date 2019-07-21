@@ -16,8 +16,6 @@
 
 package com.google.codeu.servlets;
 
-import com.google.appengine.api.datastore.KeyFactory;
-import com.google.cloud.language.v1.Document;
 import com.google.codeu.data.Datastore;
 import com.google.codeu.data.Message;
 import com.google.gson.Gson;
@@ -27,7 +25,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.jsoup.Jsoup;
 
 
 /** Handles fetching and saving {@link Message} instances. */

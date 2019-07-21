@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Philosopher|Roboto&display=swap');
-
 nav {
-  font-family:Philosopher, sans-serif;
+  font-family: Philosopher, sans-serif;
 }
 
+
 /* Remove bullet points from navigation bar. */
+
 nav ul {
   list-style-type: none;
   padding-left: 0;
 }
+
+
 /* Keep navigation menu on one line. */
+
 nav li {
   display: inline-block;
   margin-right: 10px
@@ -46,22 +50,24 @@ header li a {
 }
 
 ul li a {
-  display:block;
-  position:relative;
+  display: block;
+  position: relative;
   text-decoration: none;
-  padding:5px;
-  font-size:16px;
+  padding: 5px;
+  font-size: 16px;
   transition: 0.5s;
 }
 
 ul:hover li a {
   transform: scale(1.2);
   opacity: 0.2;
-  filter:blur(5px);
+  filter: blur(5px);
 }
 
 ul li a:hover {
   transform: scale(1.5);
   opacity: 1;
-  filter:blur(0);
+  filter: blur(0);
+  color: aliceblue;
+  text-decoration: none;
 }

@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Message Feed</title>
-    <link rel="stylesheet" href="/css/indexPage.css">
-    <link rel="stylesheet" href="/css/user-page.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <script src="/js/messages-loader.js"></script>
-    <script src="/js/navigation-loader.js"></script>
-  </head>
-  <body onload="addLoginOrLogoutLinkToNavigation();buildUI();">
+
+<head>
+  <title>Message Feed</title>
+  <link rel="stylesheet" href="/css/user-page.css">
+  <link rel="stylesheet" href="/css/navbar.css">
+  <link rel="stylesheet" href="/css/feed.css">
+  <script src="/js/messages-loader.js"></script>
+  <script src="/js/navigation-loader.js"></script>
+</head>
+
+<body onload="addLoginOrLogoutLinkToNavigation();buildUI()">
+  <div>
     <header>
       <img src="images/popcornIcon.png" alt="Image not available">
       <nav>
@@ -17,29 +20,59 @@
           <li><a href="/aboutus.html">About Our Team</a></li>
           <li><a href="/feed.html">Public Feed Page</a></li>
           <li><a href="/maps.html">Maps Page</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
         </ul>
       </nav>
     </header>
-    <div id="content">
-      <h1>Message Feed</h1>
-      <div>
-        <select id="language">
-          <option value="original">Original</option>
-          <option value="en">English</option>
-          <option value="zh">Chinese</option>
-          <option value="hi">Hindi</option>
-        </select>
-        <button onclick="submitTransReq();">Translate</button>
-        <select id="cinema">
-          <option value="all">All</option>
-        </select>
-        <button onclick="submitCinemaReq();">Select</button>
-        <div id="refreshInstruc">
-          <h2>Refresh page after 4.5s to see your review.</h2>
-        </div>
-      </div>
-      <hr/>
-      <div id="message-container">Loading...</div>
+  </div>
+
+  <div class="parallax">
+    <div class="parallax__layer parallax__layer__0">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_0.png">
     </div>
-  </body>
+    <div class="parallax__layer parallax__layer__1">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_1.png">
+    </div>
+    <div class="parallax__layer parallax__layer__2">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_2.png">
+    </div>
+    <div class="parallax__layer parallax__layer__3">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_3.png">
+    </div>
+    <div class="parallax__layer parallax__layer__4">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_4.png">
+    </div>
+    <div class="parallax__layer parallax__layer__5">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_5.png">
+    </div>
+    <div class="parallax__layer parallax__layer__6">
+      <img src="https://sam.beckham.io/images/articles/firewatch/layer_6.png">
+    </div>
+    <div class="parallax__layer parallax__layer__7">
+      <img src="/images/cinemaReviews1.svg" style="top: 100px;">
+    </div>
+    <div class="parallax__cover">
+      <div id="content">
+        <h1>Cinema Reviews Feed</h1>
+        <div>
+          <select id="language">
+            <option value="original">Original</option>
+            <option value="en">English</option>
+            <option value="zh">Chinese</option>
+            <option value="hi">Hindi</option>
+          </select>
+          <button onclick="submitTransReq();">Translate</button>
+          <select id="cinema">
+            <option value="all">All</option>
+          </select>
+          <button onclick="submitCinemaReq();">Select</button>
+        </div>
+        <hr>
+        <div id="message-container">Loading...</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>

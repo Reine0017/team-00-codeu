@@ -16,9 +16,22 @@
   font-style: italic;
 }
 
-#ReviewsAndImg{
-  width:50%;
-  height:70%;
+#ReviewsAndImg {
+  width: 50%;
+  height: 70%;
+}
+
+.sentiment_title {
+  font-size: 2rem;
+  font-family: avenir next;
+  color: navajowhite;
+}
+
+#cinemaSentimentScore {
+  padding-bottom: 20px;
+  font-size: 3rem;
+  font-family: avenir next;
+  color: navajowhite;
 }
 
 #submitReviewTextArea{

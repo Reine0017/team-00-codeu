@@ -72,7 +72,6 @@ public class MarkerMessagesServlet extends HttpServlet {
     Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
     double score = sentiment.getScore();
     languageService.close();
-
     Message message = new Message(user, userText, score);
     if (parentKey != null && !parentKey.equals(""))
       datastore.storeMessage(message, parentKey);
