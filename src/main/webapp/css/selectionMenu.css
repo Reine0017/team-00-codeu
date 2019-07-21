@@ -16,10 +16,20 @@
   font-style: italic;
 }
 
+#ReviewsAndImg{
+  width:50%;
+  height:70%;
+}
+
 #submitReviewTextArea{
   background-color:antiquewhite;
-  width:60%;
-  height:55%;
+  width:95%;
+  height:85%;
+  padding-left:10px;
+}
+
+#review-form{
+  color:antiquewhite;
 }
 
 #submitReviewsButton{
@@ -59,7 +69,6 @@
   bottom: -2px;
   background-color:brown
 }
-
 
 .content {
   position: relative;
