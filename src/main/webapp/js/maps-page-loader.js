@@ -175,8 +175,21 @@ function fetchAllMessages() {
   fetch('/sentiment-aggregate');
 }
 
+function fetchBlobstoreUrlAndShowForm() {
+  fetch('/blobstore-upload-url')
+      .then((response) => {
+        return response.text();
+      })
+      .then((imageUploadUrl) => {
+        const messageForm = document.getElementById('review-form');
+        messageForm.action = imageUploadUrl;
+        messageForm.classList.remove('hidden');
+      });
+}
+
 function buildUI() {
   fetchLoginStatus();
   fetchConfigAndBuildMap();
   fetchAllMessages();
+  fetchBlobstoreUrlAndShowForm();
 }

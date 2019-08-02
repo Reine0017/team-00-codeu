@@ -97,6 +97,14 @@ public class MessageServlet extends HttpServlet {
     String user = userService.getCurrentUser().getEmail();
     String userText = Jsoup.clean(request.getParameter("text"), Whitelist.none());
 
+    // Perform sentiment analysis when the user submits a message
+    Document doc = Document.newBuilder()
+        .setContent(userText).setType(Document.Type.PLAIN_TEXT).build();
+    LanguageServiceClient languageService = LanguageServiceClient.create();
+    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
+    double score = sentiment.getScore();
+    languageService.close();
+
     String imageUrl = getUploadedFileUrl(request, "image");
     if (imageUrl != "" && imageUrl != null) {
       String imageToInsert = "<img src=\"" + imageUrl + "\">";
@@ -112,14 +120,6 @@ public class MessageServlet extends HttpServlet {
     while (matcher.find()) {
       url = matcher.group();
     }
-
-    // Perform sentiment analysis when the user submits a message
-    Document doc = Document.newBuilder()
-        .setContent(userText).setType(Document.Type.PLAIN_TEXT).build();
-    LanguageServiceClient languageService = LanguageServiceClient.create();
-    Sentiment sentiment = languageService.analyzeSentiment(doc).getDocumentSentiment();
-    double score = sentiment.getScore();
-    languageService.close();
 
     // Validating the URL
     UrlValidator defaultValidator = new UrlValidator();
